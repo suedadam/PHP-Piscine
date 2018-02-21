@@ -3,28 +3,19 @@
 function ft_is_sort(array)
 {
 	var itt = array.entries();
-	var i = 0;
 
 	if (array.length < 2) {
-		console.log(array.length);
-		return false;
+		return true;
 	}
-	for (let e of itt) {
-		console.log(e.value);
+	for (var i = array.length - 1; i >= 0; i--) {
+		if (array[i].localeCompare(array[i + 1]) == 1)
+			return false;
 	}
-	// while (i < array.length)
-	// {
-	// 	if (itt.next().value.toString().localeCompare(itt.value) == -1) {
-	// 		return false;
-	// 	}
-	// 	else {
-	// 		console.log("Passed")
-	// 	}
-	// 	i++;
-	// }
 	return true;
 }
 
-process.argv.shift();
-process.argv.shift();
-console.log(ft_is_sort(process.argv))
+// var arr = ["!/@#;^", "42", "Hello World", "hi", "zZzZzZz"];
+// if (ft_is_sort(arr))
+// 	console.log("The array is sorted");
+// else
+// 	console.log("The array is not sorted");
